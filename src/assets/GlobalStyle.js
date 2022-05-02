@@ -64,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     font-weight: 300;
-    font-family: 'SUIT', sans-serif;
+    font-family: 'KoPub-Kr', sans-serif;
     line-height: 1.2;
     background-color: white;
   }
