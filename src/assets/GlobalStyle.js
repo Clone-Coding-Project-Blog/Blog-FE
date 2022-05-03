@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%;
     vertical-align: middle;
     height: 100vh;
+    width: 100vw;
   }
 
   div, span, applet, object, iframe,
