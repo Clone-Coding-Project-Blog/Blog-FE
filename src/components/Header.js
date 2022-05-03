@@ -43,6 +43,7 @@ function Header() {
     //TODO
     //임시 로그인 스테이트
     const [isAuth, setIsAuth] = useState(true);
+    const [isAdmin, setIsAdmin] = useState(true);
     const userName = "Mizzle";
 
     return(
@@ -79,12 +80,16 @@ function Header() {
                                         leaveTo="transform opacity-0 scale-95"
                                     >
                                         <DownDropItems>
-                                            <DownDropItem>
-                                                <DwonDropItemLink href="#">글쓰기</DwonDropItemLink>
-                                            </DownDropItem>
-                                            <DownDropItem>
-                                                <DwonDropItemLink href="#">게시글 목록</DwonDropItemLink>
-                                            </DownDropItem>
+                                            {isAdmin===true &&(
+                                                <>
+                                                    <DownDropItem>
+                                                        <DwonDropItemLink href="#">글쓰기</DwonDropItemLink>
+                                                    </DownDropItem>
+                                                    <DownDropItem>
+                                                    <DwonDropItemLink href="#">게시글 목록</DwonDropItemLink>
+                                                    </DownDropItem>
+                                                </>
+                                            )}
                                             <DownDropItem>
                                                 <DwonDropItemLink href="#">회원탈퇴</DwonDropItemLink>
                                             </DownDropItem>
