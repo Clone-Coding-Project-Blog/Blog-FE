@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import './font/KoPub_KR/KoPub.css';
+import '../font/KoPub_KR/KoPub.css';
 
 const GlobalStyle = createGlobalStyle`
 
