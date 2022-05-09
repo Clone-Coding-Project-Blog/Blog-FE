@@ -1,24 +1,26 @@
+//
 import { useForm } from 'react-hook-form';
-import tw, { styled } from 'twin.macro';
 
-const LoginMain = tw.div`w-full h-full flex justify-center items-start`
-const LoginTitleItems = tw.div`w-full p-8 text-center`;
-const LoginTitleAnchor = tw.a`text-4xl font-bold cursor-pointer`;
-const LoginTitleItem = tw.div`pt-4`;
-const LoginTitleLabel = tw.label`text-2xl font-thin`;
+//
+import tw from 'twin.macro';
 
-const LoginFormContainer = tw.div`w-full bg-gray-50 shadow rounded-md p-4`;
-const LoginFormItem = tw.div`w-full p-2`;
-const LoginFormItemLabel = tw.label`text-sm text-gray-600`;
-const LoginFormItemInput = styled.input`
-    ${() => tw`w-full border border-solid border-gray-300 rounded-md p-2 mt-1 focus:outline-none focus:border focus:ring-0`}
-    &:focus {
-      border: 1px solid rgb(192 132 252);
-      box-shadow: 0 0 0 1px rgb(192 132 252);
-    }
-`;
-const LoginFormItemButtons = tw.div`flex justify-center items-center`;
-const LoginFormItemSubmitButton = tw.button`w-full bg-gray-200 p-2 rounded-md border text-center cursor-pointer hover:bg-gray-300`;
+//
+import {
+    UserMain,
+    UserTitleItems,
+    UserTitleAnchor,
+    UserTitleItem,
+    UserTitleLabel,
+    UserFormContainer,
+    UserFormItem,
+    UserFormItemLabel,
+    UserFormItemInput,
+    UserFormItemButtons,
+    UserFormItemSubmitButton,
+} from '../assets/styles/UserStyle';
+
+
+const LoginFormItemSubmitButton = tw(UserFormItemSubmitButton)`bg-gray-200 p-2 hover:bg-gray-300`
 const LoginFormItemSocialLink = tw.a`w-full bg-gray-200 p-2 rounded-md border text-center cursor-pointer hover:bg-gray-300`;
 
 const DivideLine = tw.hr`m-2`;
@@ -34,66 +36,67 @@ function Login() {
     }
 
     return(
-        <LoginMain>
+        <UserMain>
             <div>
-                <LoginTitleItems>
+                <UserTitleItems>
                     <div>
-                        <LoginTitleAnchor href="#">Mizzle</LoginTitleAnchor>
+                        <UserTitleAnchor href="#">Mizzle</UserTitleAnchor>
                     </div>
-                    <LoginTitleItem>
-                        <LoginTitleLabel>계정 로그인</LoginTitleLabel>
-                    </LoginTitleItem>
-                </LoginTitleItems>
+                    <UserTitleItem>
+                        <UserTitleLabel>계정 로그인</UserTitleLabel>
+                    </UserTitleItem>
+                </UserTitleItems>
 
-                <LoginFormContainer>
+                <UserFormContainer>
                     <form onSubmit={handleSubmit(onValid)}>
-                        <LoginFormItem>
-                            <LoginFormItemLabel htmlFor="username">아이디</LoginFormItemLabel>
-                            <LoginFormItemInput
+                        <UserFormItem>
+                            <UserFormItemLabel htmlFor="username">아이디</UserFormItemLabel>
+                            <UserFormItemInput
                                 { ...register("username", { required: "아이디를 입력해 주세요." }) }
                                 type="text"
                             />
-                        </LoginFormItem>
-                        <LoginFormItem>
-                            <LoginFormItemLabel htmlFor="password">아이디</LoginFormItemLabel>
-                            <LoginFormItemInput
+                        </UserFormItem>
+                        <UserFormItem>
+                            <UserFormItemLabel htmlFor="password">비밀번호</UserFormItemLabel>
+                            <UserFormItemInput
                                 { ...register("password", { required: "비밀번호를 입력해 주세요." }) }
                                 type="password"
                             />
-                        </LoginFormItem>
-                        <LoginFormItem>
-                            <LoginFormItemButtons>
+                        </UserFormItem>
+
+                        <UserFormItem>
+                            <UserFormItemButtons>
                                 <LoginFormItemSubmitButton>로그인</LoginFormItemSubmitButton>
-                            </LoginFormItemButtons>
-                        </LoginFormItem>
+                            </UserFormItemButtons>
+                        </UserFormItem>
                         
-                        <LoginFormItem>
-                            <LoginFormItemButtons>
+                        <UserFormItem>
+                            <UserFormItemButtons>
                                 <LoginFormItemSocialLink>구글 로그인</LoginFormItemSocialLink>
-                            </LoginFormItemButtons>
-                        </LoginFormItem>
-                        <LoginFormItem>
-                            <LoginFormItemButtons>
+                            </UserFormItemButtons>
+                        </UserFormItem>
+                        <UserFormItem>
+                            <UserFormItemButtons>
                                 <LoginFormItemSocialLink>카카오톡 로그인</LoginFormItemSocialLink>
-                            </LoginFormItemButtons>
-                        </LoginFormItem>
-                        <LoginFormItem>
-                            <LoginFormItemButtons>
+                            </UserFormItemButtons>
+                        </UserFormItem>
+                        <UserFormItem>
+                            <UserFormItemButtons>
                                 <LoginFormItemSocialLink>네이버 로그인</LoginFormItemSocialLink>
-                            </LoginFormItemButtons>
-                        </LoginFormItem>
+                            </UserFormItemButtons>
+                        </UserFormItem>
 
                         <DivideLine />
 
-                        <LoginFormItem>
+                        <UserFormItem>
                             <LoginFormRegisterButton>
-                                <LoginFormRegisterAnchor href="#">회원가입</LoginFormRegisterAnchor>
+                                <LoginFormRegisterAnchor href="/user/create">회원가입</LoginFormRegisterAnchor>
                             </LoginFormRegisterButton>
-                        </LoginFormItem>
+                        </UserFormItem>
                     </form>
-                </LoginFormContainer>
+                </UserFormContainer>
             </div>
-        </LoginMain>
+        </UserMain>
     );
 }
 
