@@ -1,5 +1,6 @@
 //
 import { useState, Fragment } from 'react';
+import { useNavigate } from 'react-router';
 import { Menu, Transition } from '@headlessui/react';
 
 //
@@ -46,6 +47,12 @@ function Header() {
     const [isAuth, setIsAuth] = useState(true);
     const [isAdmin, setIsAdmin] = useState(true);
     const userName = "Mizzle";
+
+    const navigate = useNavigate();
+
+    const onClickLogin = () => {
+        navigate('user/login')
+    }
 
     return(
         <header>
@@ -103,7 +110,9 @@ function Header() {
                             </Menu>
                         ):(
                             <div>
-                                <LoginLinkButton>로그인</LoginLinkButton>
+                                <LoginLinkButton onClick={onClickLogin}>
+                                    로그인
+                                </LoginLinkButton>
                             </div>
                         )}
                     </HeaderItems>

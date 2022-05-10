@@ -40,7 +40,7 @@ function Login() {
             <div>
                 <UserTitleItems>
                     <div>
-                        <UserTitleAnchor href="#">Mizzle</UserTitleAnchor>
+                        <UserTitleAnchor href="/">Mizzle</UserTitleAnchor>
                     </div>
                     <UserTitleItem>
                         <UserTitleLabel>계정 로그인</UserTitleLabel>

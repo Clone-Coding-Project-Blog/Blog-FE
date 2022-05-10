@@ -35,7 +35,7 @@ function Register() {
             <div>
                 <UserTitleItems>
                     <div>
-                        <UserTitleAnchor href="#">Mizzle</UserTitleAnchor>
+                        <UserTitleAnchor href="/">Mizzle</UserTitleAnchor>
                     </div>
                     <UserTitleItem>
                         <UserTitleLabel>회원 가입</UserTitleLabel>
