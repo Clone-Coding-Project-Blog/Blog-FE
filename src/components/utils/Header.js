@@ -6,6 +6,7 @@ import { Menu, Transition } from '@headlessui/react';
 import tw, { styled } from 'twin.macro';
 import { FiSearch } from 'react-icons/fi';
 import { HiChevronDown } from 'react-icons/hi';
+import { focusStyleBorderPurple } from '../../assets/styles/BasicStyle';
 
 
 const MainHeader = styled.div`
@@ -18,10 +19,10 @@ const HeaderTitle = tw.div`p-2 text-3xl font-bold`;
 const HeaderItems = tw.div`p-2 flex items-center invisible md:visible`;
 
 const HeaderSearchItems = tw.div`flex pl-2`;
-const HeaderSearchInput = styled.input`
-  outline-color: #d1d5db;
-  ${() => tw`border border-solid border-gray-300 rounded-l-md h-8 pl-2`}
-`;
+const HeaderSearchInput = styled.input(() => [
+  tw`border border-solid border-gray-300 rounded-l-md h-8 pl-2 focus:mr-px`,
+  focusStyleBorderPurple(),
+  ]);
 const HeaderSearchButton = tw.button`p-2 bg-gray-200 rounded-r-md h-8`;
 const HeaderSearchIcon = tw(FiSearch)`h-4 w-4`;
 
