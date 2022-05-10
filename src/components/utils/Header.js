@@ -51,7 +51,7 @@ function Header() {
             <MainHeader>
                 <HeaderBackground>
                     <HeaderTitle>
-                        <a href="#">Mizzle</a>
+                        <a href="src/components/utils/Header#">Mizzle</a>
                     </HeaderTitle>
 
                     <HeaderItems>
